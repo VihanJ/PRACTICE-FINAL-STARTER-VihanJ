@@ -11,7 +11,7 @@
 TeaPacket* bestPacket(TeaPacket* head){
 
    if (head == NULL) {
-      return 0;
+      return head;
    } else {
       if (head->next!=NULL) {
          TeaPacket* bestOfNextPackets = bestPacket(head->next);
@@ -56,7 +56,7 @@ Node* insert(Node* head, int value){
 bool isBalanced(std::string s){
    
    int counter = 0;
-   for (int i = 0; i < s.length; i++) {
+   for (int i = 0; i < s.length(); i++) {
       if (s[0] == 'A') {
          counter++;
       } else if (s[0] == 'B') {
@@ -64,10 +64,6 @@ bool isBalanced(std::string s){
       }
    }
    return (counter==0);
-}
-
-
-   return false;
 }
 
 
