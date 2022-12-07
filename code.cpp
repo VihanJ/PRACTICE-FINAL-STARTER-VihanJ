@@ -39,8 +39,12 @@ Node* insert(Node* head, int value){
    Node* currNode = head;
 
    //gets node before newNode
-   while (currNode->data < newNode->data) {
-      currNode = currNode->next;
+   while (true) {
+      if (currNode->next->data < newNode->data) {
+         currNode = currNode->next;
+      } else {
+         break;
+      }
    }
    Node* nextNode = currNode->next;
 
